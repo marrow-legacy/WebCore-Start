@@ -10,7 +10,7 @@ h2 { color: rgb(195, 46, 41); font-size: 153.9%; font-weight: bold; text-shadow:
 a { cursor: hand; }
 p { margin: 10px 0 0; line-height: 150%; font-size: inherit; }
 code, tt { line-height: 150%; font-family: 'Inconsolata', 'Monaco', fixed; }
-tt { display: inline-block; background-color: rgb(195, 46, 41); padding: 0 5px; color: white; -webkit-border-radius: 1em; }
+tt { display: inline-block; background-color: rgb(195, 46, 41); padding: 0 5px; color: white; -webkit-border-radius: 1em; margin-top: 1px; }
 
 dl { padding: 0; margin: 10px 0; }
 dd { padding-left: 20px; }
@@ -53,11 +53,13 @@ li.disabled:hover a { color: inherit; cursor: default; }
 .colophon a { text-decoration: none; }
 .colophon a:hover { text-decoration: underline; }
 
-.onethird, .onehalf { display: inline-block; vertical-align: top; margin-bottom: 10px; padding-right: 1%; }
+.onethird, .onehalf, .twothirds { display: inline-block; vertical-align: top; margin-bottom: 10px; padding-right: 1%; }
 .onethird { width: 32%; }
 .onehalf { width: 48.75%; }
+.twothirds { width: 65%; }
 
-.onethird input, .onehalf input { width: 95%; }
+.onethird input, .onehalf input, .twothirds input { width: 95%; }
+.onethird input[type='radio'], .onehalf input[type='radio'], .twothirds input[type='radio'] { width: auto; }
 
 
 /* Tables. */
@@ -84,8 +86,12 @@ form dt:first-child { margin-top: 0; }
 form dt label { font-size: 108%; font-weight: bold; }
 form dd { margin: 0; padding: 0; }
 form .help { color: #999; }
-input[type='text'], input[type='password'], textarea { font-size: 118%; margin: 5px 0 10px; padding: 5px; border: none; *border: 1px solid black; -webkit-box-shadow: 0px 2px 5px #999; -moz-box-shadow: 0px 2px 5px #999; box-shadow: 0px 2px 5px #999; }
+input[type='radio'] { display: inline; }
+input[type='text'], input[type='password'], textarea, select { font-size: 118%; margin: 5px 0 10px; padding: 5px; border: none; *border: 1px solid black; -webkit-box-shadow: 0px 2px 5px #999; -moz-box-shadow: 0px 2px 5px #999; box-shadow: 0px 2px 5px #999; }
 dl input[type='submit'], dl input[type='reset'], dl a.button, dl button { padding-left: 2em; padding-right: 2em; margin-right: 15px; }
+form ul { margin: 0; padding: 0; }
+form ul li { list-style: none; margin: 5px; padding: 0; }
+form ul li input { margin-right: 5px; }
 
 
 

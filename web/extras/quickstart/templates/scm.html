@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:py="http://genshi.edgewall.org/"
+        xmlns:xi="http://www.w3.org/2001/XInclude">
+    
+    <xi:include href="${relative('web.extras.quickstart.templates.master')}" />
+    
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''" />
+        
+        <title>Welcome</title>
+        
+        <script type="text/javascript" charset="utf-8">
+            $(function(){
+                
+                $('input.watermark').watermark();
+                
+            });
+        </script>
+    </head>
+    
+    <body class="step-overview sstep-scm">
+        <h2>Source Code Management</h2>
+        
+        <p>You can have your newly created project automatically checked into an SCM system like Subversion, Git, or Mercurial.</p>
+        
+		<form method="post" action="${web.request.script_name}">
+			<dl>
+			    <div class="onethird">
+    				<dt><label>Repository Type</label></dt>
+    				<dd><ul>
+    				    <li><input type="radio" name="scm.type" value="" checked="" /> None</li>
+    				    <li><input type="radio" name="scm.type" value="svn" /> Subversion</li>
+    				    <li><input type="radio" name="scm.type" value="hg" /> Mercurial</li>
+    				    <li><input type="radio" name="scm.type" value="git" /> Git</li>
+    				</ul></dd>
+    				<dd class="help">Select your source code manager.</dd>
+		        </div>
+		        
+		        <div class="twothirds">
+    				<dt><label>Repository URL</label></dt>
+    				<dd><input type="text" name="scm.url" style="width: 97%;" /></dd>
+    				<dd class="help">The URL to your repository.  Examples:</dd>
+    				<dd class="help"><tt>http://example.com/HelloWorld/trunk</tt></dd>
+    				<dd class="help"><tt>file:///repository/HelloWorld/trunk</tt></dd>
+    				<dd class="help"><tt>https://jrh@bitbucket.org/jrh/HelloWorld/</tt></dd>
+    				<dd class="help"><tt>git@github.com:jrh/HelloWorld.git</tt></dd>
+				</div>
+				
+    			<div class="onehalf">
+    				<dt><label>User Name</label></dt>
+    				<dd><input class="watermark" type="text" title="jrh" name="scm.user" /></dd>
+    				<dd class="help">Leave blank if the URL already includes a user name.  Leave both <tt>User Name</tt> and <tt>Password</tt> blank if you do not require authentication.</dd>
+				</div>
+    			<div class="onehalf">
+    				<dt><label>Password</label></dt>
+    				<dd><input type="password" name="scm.password" /></dd>
+    				<dd class="help">Leave blank if authentication is automatic, e.g. if you have a configuration file which already contains your password.</dd>
+				</div>
+                
+				<dt></dt>
+				<dd><input type="submit" value="Save" /><input type="reset" value="Reset" /></dd>
+			</dl>
+	   </form>
+	   
+	   <br style="clear: both;" />
+    </body>
+</html>
